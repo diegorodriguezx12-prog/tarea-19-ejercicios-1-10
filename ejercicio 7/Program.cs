@@ -16,7 +16,7 @@ do
     else
     {
         correcto = false;
-        Console.WriteLine("\nError: Ingrese un monto decimal válido y mayor o igual a 0.");
+        Console.WriteLine("Error: Ingrese un monto decimal válido y mayor o igual a 0.");
         Console.WriteLine("Presione cualquier tecla para intentar de nuevo...");
         Console.ReadKey();
     }
@@ -27,5 +27,5 @@ Console.Clear();
 Console.WriteLine("Salario registrado exitosamente.");
 Console.WriteLine("Monto: Q" + salario);
 
-Console.WriteLine("\nPresione cualquier tecla para salir...");
+Console.WriteLine("Presione cualquier tecla para salir...");
 Console.ReadKey();
