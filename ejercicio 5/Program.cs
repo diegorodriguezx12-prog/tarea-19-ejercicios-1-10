@@ -1,29 +1,31 @@
-﻿DateTime fechaIngresada;
-bool esValido;
+﻿int numero;
+bool correcto;
 
 do
 {
     Console.Clear();
-    Console.WriteLine("=== Validador de Fechas ===");
-    Console.Write("Ingrese una fecha (día/mes/año): ");
-    string entrada = Console.ReadLine();
+    Console.WriteLine("=== Detector de Par o Impar ===");
+    Console.Write("Ingrese un número entero: ");
 
-    esValido = DateTime.TryParse(entrada, out fechaIngresada);
+    correcto = int.TryParse(Console.ReadLine(), out numero);
 
-    if (!esValido)
+    if (!correcto)
     {
-        Console.WriteLine("\nError: La fecha no es válida o el formato es incorrecto.");
-        Console.WriteLine("Asegúrese de usar el formato DD/MM/AAAA.");
+        Console.WriteLine("\nError: Debe ingresar un número entero (sin letras ni decimales).");
         Console.WriteLine("Presione cualquier tecla para intentar de nuevo...");
         Console.ReadKey();
     }
 
-} while (!esValido);
+} while (!correcto);
 
-Console.Clear();
-Console.WriteLine("¡Fecha correcta!");
+if (numero % 2 == 0)
+{
+    Console.WriteLine("\nEl número " + numero + " es PAR.");
+}
+else
+{
+    Console.WriteLine("\nEl número " + numero + " es IMPAR.");
+}
 
-Console.WriteLine("La fecha ingresada es: " + fechaIngresada.ToShortDateString());
-
-Console.WriteLine("\nPresione cualquier tecla para finalizar...");
+Console.WriteLine("\nPresione cualquier tecla para salir...");
 Console.ReadKey();
